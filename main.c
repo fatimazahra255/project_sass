@@ -73,7 +73,7 @@ comptee();
        tri();
         for(int i=0;i<nbr_cmp;i++)
        {
-        printf("CIN: %s\n",comptes[i].cin);
+        printf("\nCIN: %s\n",comptes[i].cin);
         printf("\nNom: %s\n",comptes[i].nom);
         printf("\nMontant: %f\n",comptes[i].montant);
        }
@@ -83,7 +83,7 @@ comptee();
        tri();
        for(int i=nbr_cmp - 1;i>=0;--i)
        {
-        printf("CIN: %s\n",comptes[i].cin);
+        printf("\nCIN: %s\n",comptes[i].cin);
         printf("\nNom: %s\n",comptes[i].nom);
         printf("\nMontant: %f\n",comptes[i].montant);
        }
