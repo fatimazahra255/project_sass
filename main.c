@@ -19,7 +19,7 @@ typedef struct
          do
             {
                 found = 0;
-                printf("cin:     \n");
+                printf("\nCIN: ");
 		        scanf("%s",cmp.cin);
               for(int i = 0; i < nbr_cmp; i++)
               {
@@ -31,11 +31,11 @@ typedef struct
               }
 
             }while(found == 1);
-		     printf("Nom:    \n");
+            printf("\nNom: ");
 		    scanf(" %s",cmp.nom);
-		    printf("Prenom:  \n");
+		    printf("\nPrenom: ");
 		    scanf(" %s",cmp.prenom);
-		    printf("Montant:  \n");
+		    printf("\nMontant: ");
 		    scanf("%f",&cmp.montant);
 		    comptes[nbr_cmp]=cmp;
 		    nbr_cmp++;
@@ -73,8 +73,9 @@ comptee();
        tri();
         for(int i=0;i<nbr_cmp;i++)
        {
-        printf("Compte     %s    ",comptes[i].cin);
-        printf("Montant =    %f\n",comptes[i].montant);
+        printf("CIN: %s\n",comptes[i].cin);
+        printf("\nNom: %s\n",comptes[i].nom);
+        printf("\nMontant: %f\n",comptes[i].montant);
        }
 	}
 	void  descendant()
@@ -82,8 +83,9 @@ comptee();
        tri();
        for(int i=nbr_cmp - 1;i>=0;--i)
        {
-        printf("Compte  :     %s   \n ",comptes[i].cin);
-        printf("Montant :     %f   \n",comptes[i].montant);
+        printf("CIN: %s\n",comptes[i].cin);
+        printf("\nNom: %s\n",comptes[i].nom);
+        printf("\nMontant: %f\n",comptes[i].montant);
        }
 	}
 
@@ -96,7 +98,9 @@ tri();
        for(int i=0;i<=nbr_cmp;i++)
        if(comptes[i].montant>tst)
        {
-           printf("%s     %s    %f\n",comptes[i].cin,comptes[i].nom,comptes[i].montant);
+            printf("CIN: %s\n",comptes[i].cin);
+            printf("Nom: %s\n",comptes[i].nom);
+            printf("Montant: %f\n\n",comptes[i].montant);
        }
 }
 void  descendant_a()
@@ -108,13 +112,15 @@ tri();
        for(int i=nbr_cmp;i>=0;i--)
        if(comptes[i].montant<tst)
        {
-           printf("%s     %s    %f\n",comptes[i].cin,comptes[i].nom,comptes[i].montant);
+            printf("CIN: %s\n",comptes[i].cin);
+            printf("Nom: %s\n",comptes[i].nom);
+            printf("Montant: %f\n\n",comptes[i].montant);
        }
 }
 void recherch_par_cin()
 {
     char cin_r[7];
-    printf("cin:");
+    printf("CIN: ");
     scanf("%s",cin_r);
     int v,r;
 
@@ -130,7 +136,10 @@ void recherch_par_cin()
     }
     }
     if(v==1)
-     printf("%s     ,%s     ,%s    ,%f\n",comptes[r].cin,comptes[r].nom,comptes[r].prenom,comptes[r].montant) ;
+     printf("CIN: %s\n",comptes[r].cin);
+     printf("Nom: %s\n",comptes[r].nom);
+     printf("Prenom: %s\n",comptes[r].prenom);
+     printf("Montant: %f\n",comptes[r].montant);
 }
 void Fidelisation()
 {
@@ -138,11 +147,11 @@ void Fidelisation()
     for(int i=nbr_cmp-1;i>=nbr_cmp-3;i--)
     {
        comptes[i].montant +=((comptes[i].montant*1.3)/100);
-        printf("***CIN:   %s    \n",comptes[i].cin,comptes[i].nom,comptes[i].prenom,comptes[i].montant) ;
-        printf("***Nom:   %s    \n",comptes[i].cin,comptes[i].nom,comptes[i].prenom,comptes[i].montant) ;
-        printf("***Prenom:   %s    \n",comptes[i].cin,comptes[i].nom,comptes[i].prenom,comptes[i].montant) ;
-        printf("***Montant apres la fedilisation:  %f\n\n",comptes[i].cin,comptes[i].nom,comptes[i].prenom,comptes[i].montant);
-        printf("***************************************************") ;
+        printf("***CIN:   %s    \n",comptes[i].cin) ;
+        printf("***Nom:   %s    \n",comptes[i].nom) ;
+        printf("***Prenom:   %s    \n",comptes[i].prenom) ;
+        printf("***Montant apres la fedilisation:  %f\n\n",comptes[i].montant);
+        printf("***************************************************\n") ;
 
     }
 }
@@ -153,10 +162,10 @@ int main()
 {
     int choix,nbr,test,i,indice,choix_affichage;
     char rep,cin_r[20],cin_d[20];
-    float test_d=0;
+    int test_d=0;
 do
 {
- printf("  ----------------MENU---------------\n");
+ printf("\n  ----------------MENU---------------\n");
  printf("  1 ==>  Creer un compte\n\n");
  printf("  2 ==>  Creer plusieure comptes\n\n");
  printf("  3 ==>  Operations bancaires\n\n");
@@ -175,9 +184,9 @@ case 1: comptee();
 break;
 
 case 3:
-printf("Tapper: (r) retrait / (d) depot ");
-//printf("Tapper (d) depo: ");
-scanf("%s",rep);
+printf("Tapper: (r) retrait / (d) depot \n");
+
+scanf(" %c",&rep);
 switch(rep)
 {
     float montant_retait,montant_depo;
@@ -205,12 +214,13 @@ case 'r':
     scanf("%f",&montant_retait);
           printf("Le montant:  %f   ",comptes[i].montant);
              comptes[i].montant -=   montant_retait;
-             printf("Le montant total:  %f   ",comptes[i].montant);
+             printf("Le montant total:  %f   \n\n",comptes[i].montant);
          }
 
 
 
     break;
+
 case 'd':
 
     do
@@ -241,23 +251,17 @@ case 'd':
                printf("Montant depo: ");
                 scanf("%f",&montant_depo);
              comptes[indice].montant   =  comptes[indice].montant   +  montant_depo;
-               printf("Le montant total:  %f   ",comptes[indice].montant);
+               printf("Le montant total:  %f   \n\n",comptes[indice].montant);
          }
 break;
-
-printf("-------------------------------\n");
-
-default:
-printf("-------------------------------\n");
-
-
  }
+  break;
  case 4:
-printf("affichage:******************************************\n");
+printf("\n Affichage:******************************************\n");
 printf(" 1 =======>  Par ordre ascendant\n");
 printf(" 2 =======>  Par ordre descendant\n");
-printf(" 3 =======>  Les comptes bancaires ayant un montant supérieur à un chiffre introduit\n");
-printf(" 4 =======>  Les comptes bancaires ayant un montant supérieur à un chiffre introduit\n");
+printf(" 3 =======>  Les comptes bancaires ayant un montant superieur a un chiffre introduit\n");
+printf(" 4 =======>  Les comptes bancaires ayant un montant superieur a un chiffre introduit\n");
 printf(" 5 =======>  Recherche par CIN\n");
 scanf("%d",&choix_affichage);
 switch( choix_affichage )
