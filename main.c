@@ -20,7 +20,7 @@ typedef struct
             {
                 found = 0;
                 printf("cin:     \n");
-		        scanf("%s",&cmp.cin);
+		        scanf("%s",cmp.cin);
               for(int i = 0; i < nbr_cmp; i++)
               {
                 if(strcmp(comptes[i].cin, cmp.cin)==0)
