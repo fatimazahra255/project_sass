@@ -31,7 +31,7 @@ typedef struct
               }
 
             }while(found == 1);
-		     printf("Nom :    \n");
+		     printf("Nom:    \n");
 		    scanf(" %s",cmp.nom);
 		    printf("Prenom:  \n");
 		    scanf(" %s",cmp.prenom);
@@ -141,7 +141,7 @@ void Fidelisation()
         printf("***CIN:   %s    \n",comptes[i].cin,comptes[i].nom,comptes[i].prenom,comptes[i].montant) ;
         printf("***Nom:   %s    \n",comptes[i].cin,comptes[i].nom,comptes[i].prenom,comptes[i].montant) ;
         printf("***Prenom:   %s    \n",comptes[i].cin,comptes[i].nom,comptes[i].prenom,comptes[i].montant) ;
-        printf("***Montant apres la fedilisation:  %f\n",comptes[i].cin,comptes[i].nom,comptes[i].prenom,comptes[i].montant) ;
+        printf("***Montant apres la fedilisation:  %f\n\n",comptes[i].cin,comptes[i].nom,comptes[i].prenom,comptes[i].montant);
         printf("***************************************************") ;
 
     }
@@ -278,10 +278,11 @@ switch( choix_affichage )
       recherch_par_cin();
       break;
       }
+      break;
  case 5:
       Fidelisation();
       break;
-      case 6:
+case 6:
       exit(0);
       break;
 
